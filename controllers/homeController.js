@@ -1,7 +1,5 @@
-const homeServie = require("../services/homeService");
 const homeController = (req, res) => {
-  homeServie();
-  res.status(200).json({ message: "ok" });
+  res.status(200).json(req.user);
 };
 
 module.exports = homeController;

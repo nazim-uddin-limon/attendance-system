@@ -1,7 +1,12 @@
+// Test controller.js
 const { testService } = require("../services/testService");
 const testController = (req, res) => {
-  testService();
-  res.end();
+  try {
+    testService();
+    res.end();
+  } catch (e) {
+    next(e);
+  }
 };
 
 module.exports = testController;

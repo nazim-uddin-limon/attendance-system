@@ -5,5 +5,7 @@ router.get("/health", (req, res) => {
 // using routes
 router.use(require("./auth"));
 router.use(require("./test"));
+router.use(require("./home"));
+router.use(require("./users"));
 
 module.exports = router;
