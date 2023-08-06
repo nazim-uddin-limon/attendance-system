@@ -4,6 +4,7 @@ const authenticate = require("../middlewares/authenticate");
 
 router.get("/users/:id", authenticate, userController.findUserById);
 router.delete("/users/:id", authenticate, userController.deleteUser);
+router.patch("/users/:id", authenticate, userController.patchUser);
 router.post("/add-user", authenticate, userController.postUser);
 router.get("/users", userController.findUser);
 
