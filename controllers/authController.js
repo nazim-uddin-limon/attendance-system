@@ -16,7 +16,7 @@ const registerController = async (req, res) => {
   }
 };
 // Login controoler
-const loginController = async (req, res) => {
+const loginController = async (req, res, next) => {
   const { email, password } = req.body;
   if (!email || !password) {
     return res.status(400).json({ message: "enter your credential" });
@@ -25,7 +25,7 @@ const loginController = async (req, res) => {
     const token = await loginService(email, password);
     res.status(200).json({ message: "Access granted", token });
   } catch (e) {
-    res.status(e.status).json({ message: e.message });
+    next(e);
   }
 };
 

@@ -7,5 +7,6 @@ router.use(require("./auth"));
 router.use(require("./test"));
 router.use(require("./home"));
 router.use(require("./users"));
+router.use("/attendance", require("./attendance"));
 
 module.exports = router;
